@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiShoppingBag } from 'react-icons/fi';
 import { BsFillPencilFill } from 'react-icons/bs';
+import { login, logout, onUserStateChange } from '../api/firebase';
+import User from './User';
+import Button from './ui/Button';
 
 function Navbar(props) {
+    const [user, setUser] = useState();
+
+    useEffect(() => {
+        onUserStateChange((user) => {
+            console.log(user)
+            setUser(user);
+        })
+    },[])
+
     return (
         <header className='flex justify-between border-b border-gray-300 p-4'>
             <Link to='/' className='flex item-center text-4xl '>
@@ -14,11 +26,15 @@ function Navbar(props) {
                 <Link to='/products'>
                     Products
                 </Link>
-                <Link to='/carts'>Carts</Link>
-                <Link to='/products/new' className='text-2xl'>
-                    <BsFillPencilFill />
-                </Link>
-                <button>Login</button>
+                {user && <Link to='/carts'>Carts</Link>}
+                {user && user.isAdmin && (
+                    <Link to='/products/new' className='text-2xl'>
+                        <BsFillPencilFill />
+                    </Link>)}
+
+                {user && <User user={user} />}
+                {user ? <Button text={'Logout'} onClick={logout}>Logout</Button> : <Button text={'Login'} onClick={login}>Login</Button>}
+                
             </nav>
             
         </header>
