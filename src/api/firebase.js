@@ -23,8 +23,13 @@ export function login() {
         .catch(console.error);
 }
 
+const LogoutPagehadle = () => {
+    window.location.href='/'
+}
+
 export function logout() {
     signOut(auth)
+    LogoutPagehadle()
     .catch(console.error);
 }
 
