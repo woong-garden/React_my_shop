@@ -1,9 +1,11 @@
 import React from 'react';
+import Products from '../components/Products';
 
 function Allproducts(props) {
+
     return (
         <div>
-            Allproducts
+            <Products />
         </div>
     );
 }

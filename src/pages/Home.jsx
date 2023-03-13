@@ -1,11 +1,14 @@
 import React from 'react';
+import Banner from '../components/Banner';
+import Products from '../components/Products';
 
 
 function Home(props) {
     return (
-        <div>
-            home
-        </div>
+        <>
+            <Banner />
+            <Products />
+        </>
     );
 }
 
