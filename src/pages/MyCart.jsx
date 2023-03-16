@@ -1,18 +1,16 @@
 import React from 'react';
-import { useQuery } from '@tanstack/react-query';
-import { useAuthContext } from '../context/AuthContext';
-import { getCart } from '../api/firebase';
 import CartItem from '../components/CartItem';
 import { BsFillPlusCircleFill } from 'react-icons/bs';
 import { FaEquals } from 'react-icons/fa';
 import PriceCard from '../components/PriceCard';
 import Button from '../components/ui/Button';
+import useCarts from '../hooks/useCarts';
 
 const SHIPPING = 3000;
 
 function MyCart(props) {
-    const { uid } = useAuthContext();
-    const { isLoading, data: products } = useQuery(['carts'], () => getCart(uid));
+
+    const { cartQuery:{ isLoading, data: products }} = useCarts();
 
     if(isLoading) {
         return <p>Loading...</p>
@@ -28,7 +26,7 @@ function MyCart(props) {
             {!hasProducts && <p>장바구니에 상품이 없습니다.</p>}
             {hasProducts && <>
                 <ul className='border-b border-gray-300 mb-8 p-4 px-8'>
-                    {products && products.map((product) => <CartItem uid={uid} key={product.id} product={product} />)}
+                    {products && products.map((product) => <CartItem key={product.id} product={product} />)}
                 </ul>
                 <div className='flex justify-between items-center mb-6 px-2 md:px-8 lg:px-16'>
                     <PriceCard text='상품 총액' price={totalPrice} />

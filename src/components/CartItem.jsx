@@ -1,20 +1,22 @@
 import React from 'react';
-import { AiOutlineMinusSquare, AiDeleteBin5Fill, AiOutlinePlusSquare } from 'react-icons/ai';
+import { AiOutlineMinusSquare, AiOutlinePlusSquare } from 'react-icons/ai';
 import { RiDeleteBin5Fill } from 'react-icons/ri';
-import { addOrUpdateTocart, removeFromCart } from '../api/firebase';
+import useCarts from '../hooks/useCarts';
 
 const ICON_CLASS = 'transition-all cursor-pointer hover:text-brand hover:scale-105 mx-1'
 
-function CartItem({ product, product: { id, image, title, option, category, price, quantity }, uid }) {
+function CartItem({ product, product: { id, image, title, option, category, price, quantity }, }) {
+    const { removeItem, addOrUpdateItem } = useCarts();
+
     const handleMinus = () => {
         if(quantity < 2) return;
-        addOrUpdateTocart(uid, {...product, quantity: quantity - 1})
+        addOrUpdateItem.mutate({...product, quantity: quantity - 1})
     }
     const handlePlus = () => {
-        addOrUpdateTocart(uid, {...product, quantity: quantity + 1})
+        addOrUpdateItem.mutate({...product, quantity: quantity + 1})
     }
     const handleDelete = () => {
-        removeFromCart(uid, id);
+        removeItem.mutate(id);
     }
 
     return (
