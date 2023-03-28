@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# 🛒 쇼핑몰 프로젝트
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![ex_screenshot](./img/shopimg.PNG)
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+**프로젝트 기간** : 2023.03.07 ~ 2023.03.16
 
-### `yarn start`
+[🎬 시연 영상](https://www.youtube.com/watch?v=bfjyOJA4VfM&list=PLLA6JaYYILepez63_Ra4ikVFJsR7a2LLt)
+<br>
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ****✨ 프로젝트 개요****
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 개인 쇼핑몰 홈페이지
+- 어드민 계정으로 홈페이지 관리
 
-### `yarn test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ****💻 기술 스택****
 
-### `yarn build`
+### Frontend
+<img src="https://img.shields.io/badge/react-444444?style=for-the-badge&logo=react"> <img src="https://img.shields.io/badge/Tailwind CSS-06B6D4?style=for-the-badge&logo=Tailwind CSS&logoColor=white"> <img src="https://img.shields.io/badge/React Query-FF4154?style=for-the-badge&logo=React Query&logoColor=white"> <img src="https://img.shields.io/badge/React Router-CA4245?style=for-the-badge&logo=React Router&logoColor=white"> 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
+<img src="https://img.shields.io/badge/Firebase-C8332D?style=for-the-badge&logo=Firebase">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+|구분|사용 기술|
+|:---:|:---:|
+|UI|React|
+|라우팅|React Router Dom|
+|스타일링|TailWind CSS|
+|아이콘|react-icons|
+|DB|Firebase Realtime|
+|서버 상태 관리|React Query|
 
-### `yarn eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ****🔍 주요 기능****
+- 소셜 로그인(구글)
+- 전체 상품 조회
+- admin 계정 상품 등록 기능
+- 장바구니 상품 추가/삭제/총액계산 기능
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ****⚙ 구현 기능****
+**로그인**
+- 소셜로그인(구글)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**헤더**
+- admin 로그인시 네비게이션 다르게 노출
 
-## Learn More
+**메인**
+- 전체 상품 조회
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**상품 상세**
+- 상품 옵션 선택
+- 장바구니 추가기능
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**상품 등록**
+- admin 계정 상품 등록기능
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**장바구니**
+- 장바구니에 추가한 상품들 보여주기
+- 장바구니 상품 총액 계산
+- 장바구니 상품 삭제, 개수 추가 감소 기능
